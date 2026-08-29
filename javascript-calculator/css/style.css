@@ -1,0 +1,241 @@
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Body */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #f4f4f4;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+
+/* Main Container */
+
+.calculator-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+/* Calculator */
+
+.calculator {
+    background-color: #222;
+
+    padding: 20px;
+
+    border-radius: 10px;
+}
+
+
+/* Display */
+
+#display {
+    width: 100%;
+    height: 70px;
+
+    margin-bottom: 15px;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: white;
+
+    text-align: right;
+
+    font-size: 30px;
+}
+
+
+/* Button Grid */
+
+.buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+/* All Buttons */
+
+button {
+    padding: 18px;
+
+    border: none;
+    border-radius: 5px;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+
+button:hover {
+    opacity: 0.85;
+}
+
+
+/* Number Buttons */
+
+.number {
+    background-color: #eeeeee;
+}
+
+
+/* Operator Buttons */
+
+.operator {
+    background-color: #ff9800;
+    color: white;
+}
+
+
+/* Clear / Delete */
+
+.action {
+    background-color: #666666;
+    color: white;
+}
+
+
+/* Equals */
+
+.equals {
+    background-color: #28a745;
+    color: white;
+}
+
+
+/* Zero Button */
+
+.zero {
+    grid-column: span 2;
+}
+
+
+/* History */
+
+.history-section {
+    background-color: white;
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-radius: 10px;
+}
+
+
+.history-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+
+.history-header h2 {
+    font-size: 20px;
+}
+
+
+/* Clear History */
+
+#clear-history {
+    background-color: #dc3545;
+
+    color: white;
+
+    padding: 8px 12px;
+
+    font-size: 14px;
+}
+
+
+/* History List */
+
+#history-list {
+    list-style: none;
+}
+
+
+#history-list li {
+    background-color: #f4f4f4;
+
+    padding: 10px;
+
+    margin-bottom: 8px;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+}
+
+
+/* Message when history is empty */
+
+.empty-history {
+    text-align: center;
+    color: #777777;
+}
+
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+
+    h1 {
+        font-size: 24px;
+    }
+
+
+    button {
+        padding: 15px;
+    }
+
+
+    #display {
+        font-size: 26px;
+    }
+
+
+    .history-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

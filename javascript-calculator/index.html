@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Calculator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="calculator-container">
+
+        <h1>JavaScript Calculator</h1>
+
+        <!-- Calculator -->
+        <div class="calculator">
+
+            <!-- Display -->
+            <input
+                type="text"
+                id="display"
+                value="0"
+                readonly
+            >
+
+            <!-- Buttons -->
+            <div class="buttons">
+
+                <button class="action" data-action="clear">
+                    C
+                </button>
+
+                <button class="action" data-action="delete">
+                    DEL
+                </button>
+
+                <button class="operator" data-operator="%">
+                    %
+                </button>
+
+                <button class="operator" data-operator="/">
+                    ÷
+                </button>
+
+
+                <button class="number" data-number="7">
+                    7
+                </button>
+
+                <button class="number" data-number="8">
+                    8
+                </button>
+
+                <button class="number" data-number="9">
+                    9
+                </button>
+
+                <button class="operator" data-operator="*">
+                    ×
+                </button>
+
+
+                <button class="number" data-number="4">
+                    4
+                </button>
+
+                <button class="number" data-number="5">
+                    5
+                </button>
+
+                <button class="number" data-number="6">
+                    6
+                </button>
+
+                <button class="operator" data-operator="-">
+                    -
+                </button>
+
+
+                <button class="number" data-number="1">
+                    1
+                </button>
+
+                <button class="number" data-number="2">
+                    2
+                </button>
+
+                <button class="number" data-number="3">
+                    3
+                </button>
+
+                <button class="operator" data-operator="+">
+                    +
+                </button>
+
+
+                <button
+                    class="number zero"
+                    data-number="0"
+                >
+                    0
+                </button>
+
+                <button class="number" data-number=".">
+                    .
+                </button>
+
+                <button class="equals" data-action="calculate">
+                    =
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- History -->
+        <div class="history-section">
+
+            <div class="history-header">
+
+                <h2>Calculation History</h2>
+
+                <button id="clear-history">
+                    Clear History
+                </button>
+
+            </div>
+
+            <ul id="history-list"></ul>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

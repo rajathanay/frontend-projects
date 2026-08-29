@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Responsive e-commerce product catalog with filters, product cards, hover effects, price range and dark mode."
+    >
+
+    <title>ShopGrid - Product Catalog</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a
+                href="#"
+                class="logo"
+            >
+                ShopGrid
+            </a>
+
+
+            <nav aria-label="Main navigation">
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="#">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#products">
+                            Products
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#categories">
+                            Categories
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#footer">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <button
+                type="button"
+                id="theme-toggle"
+                class="theme-toggle"
+                aria-label="Switch to dark mode"
+            >
+                Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         HERO
+    ====================================== -->
+
+    <section class="catalog-hero">
+
+        <div class="container">
+
+            <p class="section-label">
+                Shop Our Collection
+            </p>
+
+            <h1>
+                Find Products You Love
+            </h1>
+
+            <p>
+                Browse our latest collection and use
+                the filters to find products matching
+                your style and budget.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CATALOG
+    ====================================== -->
+
+    <main
+        id="products"
+        class="catalog-container"
+    >
+
+
+        <!-- =================================
+             FILTER PANEL
+        ================================== -->
+
+        <aside
+            class="filter-panel"
+            aria-label="Product filters"
+        >
+
+            <div class="filter-heading">
+
+                <h2>
+                    Filters
+                </h2>
+
+
+                <button
+                    type="button"
+                    id="clear-filters"
+                    class="clear-filters"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+
+            <!-- CATEGORY -->
+
+            <section
+                id="categories"
+                class="filter-group"
+            >
+
+                <h3>
+                    Categories
+                </h3>
+
+
+                <div class="category-chips">
+
+                    <button
+                        type="button"
+                        class="category-chip active"
+                        data-category="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-chip"
+                        data-category="clothing"
+                    >
+                        Clothing
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-chip"
+                        data-category="shoes"
+                    >
+                        Shoes
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-chip"
+                        data-category="accessories"
+                    >
+                        Accessories
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- PRICE -->
+
+            <section class="filter-group">
+
+                <h3>
+                    Price Range
+                </h3>
+
+
+                <label for="price-range">
+
+                    Maximum Price:
+
+                    <strong id="price-value">
+                        $200
+                    </strong>
+
+                </label>
+
+
+                <input
+                    type="range"
+                    id="price-range"
+                    min="10"
+                    max="500"
+                    step="10"
+                    value="200"
+                >
+
+            </section>
+
+
+
+            <!-- SIZE -->
+
+            <section class="filter-group">
+
+                <h3>
+                    Size
+                </h3>
+
+
+                <label class="checkbox-option">
+
+                    <input
+                        type="checkbox"
+                        name="size"
+                        value="small"
+                    >
+
+                    Small
+
+                </label>
+
+
+                <label class="checkbox-option">
+
+                    <input
+                        type="checkbox"
+                        name="size"
+                        value="medium"
+                    >
+
+                    Medium
+
+                </label>
+
+
+                <label class="checkbox-option">
+
+                    <input
+                        type="checkbox"
+                        name="size"
+                        value="large"
+                    >
+
+                    Large
+
+                </label>
+
+            </section>
+
+        </aside>
+
+
+
+        <!-- =================================
+             PRODUCTS
+        ================================== -->
+
+        <section class="products-section">
+
+
+            <!-- TOOLBAR -->
+
+            <div class="product-toolbar">
+
+                <p>
+
+                    Showing
+
+                    <strong id="product-count">
+                        6 Products
+                    </strong>
+
+                </p>
+
+
+                <label for="sort-products">
+
+                    Sort by:
+
+                    <select id="sort-products">
+
+                        <option value="featured">
+                            Featured
+                        </option>
+
+                        <option value="price-low">
+                            Price: Low to High
+                        </option>
+
+                        <option value="price-high">
+                            Price: High to Low
+                        </option>
+
+                        <option value="name">
+                            Name
+                        </option>
+
+                    </select>
+
+                </label>
+
+            </div>
+
+
+
+            <!-- PRODUCT GRID -->
+
+            <div
+                id="product-grid"
+                class="product-grid"
+            >
+
+
+                <!-- PRODUCT 1 -->
+
+                <article
+                    class="product-card"
+                    data-category="clothing"
+                    data-price="89.99"
+                    data-name="Classic Casual Jacket"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/product-1.jpg"
+                            alt="Classic casual jacket"
+                        >
+
+                        <span class="product-badge">
+                            New
+                        </span>
+
+
+                        <button
+                            type="button"
+                            class="quick-view-button"
+                            data-product="Classic Casual Jacket"
+                        >
+                            Quick View
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-content">
+
+                        <p class="product-category">
+                            Clothing
+                        </p>
+
+                        <h2>
+                            Classic Casual Jacket
+                        </h2>
+
+                        <p class="product-description">
+                            Comfortable everyday jacket
+                            with a clean modern design.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="product-price">
+                                $89.99
+                            </span>
+
+                            <button
+                                type="button"
+                                class="cart-button"
+                            >
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 2 -->
+
+                <article
+                    class="product-card"
+                    data-category="shoes"
+                    data-price="74.99"
+                    data-name="Everyday Running Shoes"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/product-2.jpg"
+                            alt="White everyday running shoes"
+                        >
+
+
+                        <button
+                            type="button"
+                            class="quick-view-button"
+                            data-product="Everyday Running Shoes"
+                        >
+                            Quick View
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-content">
+
+                        <p class="product-category">
+                            Shoes
+                        </p>
+
+                        <h2>
+                            Everyday Running Shoes
+                        </h2>
+
+                        <p class="product-description">
+                            Lightweight running shoes
+                            designed for comfort and
+                            daily use.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="product-price">
+                                $74.99
+                            </span>
+
+                            <button
+                                type="button"
+                                class="cart-button"
+                            >
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 3 -->
+
+                <article
+                    class="product-card"
+                    data-category="accessories"
+                    data-price="119.99"
+                    data-name="Leather Backpack"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/product-3.jpg"
+                            alt="Brown leather backpack"
+                        >
+
+                        <span class="product-badge">
+                            Popular
+                        </span>
+
+
+                        <button
+                            type="button"
+                            class="quick-view-button"
+                            data-product="Leather Backpack"
+                        >
+                            Quick View
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-content">
+
+                        <p class="product-category">
+                            Accessories
+                        </p>
+
+                        <h2>
+                            Leather Backpack
+                        </h2>
+
+                        <p class="product-description">
+                            Stylish backpack with
+                            multiple storage compartments.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="product-price">
+                                $119.99
+                            </span>
+
+                            <button
+                                type="button"
+                                class="cart-button"
+                            >
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 4 -->
+
+                <article
+                    class="product-card"
+                    data-category="clothing"
+                    data-price="29.99"
+                    data-name="Essential T-Shirt"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/product-4.jpg"
+                            alt="Casual black t-shirt"
+                        >
+
+
+                        <button
+                            type="button"
+                            class="quick-view-button"
+                            data-product="Essential T-Shirt"
+                        >
+                            Quick View
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-content">
+
+                        <p class="product-category">
+                            Clothing
+                        </p>
+
+                        <h2>
+                            Essential T-Shirt
+                        </h2>
+
+                        <p class="product-description">
+                            Soft cotton everyday
+                            t-shirt with a relaxed fit.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="product-price">
+                                $29.99
+                            </span>
+
+                            <button
+                                type="button"
+                                class="cart-button"
+                            >
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 5 -->
+
+                <article
+                    class="product-card"
+                    data-category="accessories"
+                    data-price="149.99"
+                    data-name="Modern Wrist Watch"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/product-5.jpg"
+                            alt="Modern wrist watch"
+                        >
+
+
+                        <button
+                            type="button"
+                            class="quick-view-button"
+                            data-product="Modern Wrist Watch"
+                        >
+                            Quick View
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-content">
+
+                        <p class="product-category">
+                            Accessories
+                        </p>
+
+                        <h2>
+                            Modern Wrist Watch
+                        </h2>
+
+                        <p class="product-description">
+                            Minimal wrist watch designed
+                            for casual and formal wear.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="product-price">
+                                $149.99
+                            </span>
+
+                            <button
+                                type="button"
+                                class="cart-button"
+                            >
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 6 -->
+
+                <article
+                    class="product-card"
+                    data-category="shoes"
+                    data-price="64.99"
+                    data-name="Urban Sneakers"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/product-6.jpg"
+                            alt="Casual urban sneakers"
+                        >
+
+                        <span class="product-badge">
+                            Sale
+                        </span>
+
+
+                        <button
+                            type="button"
+                            class="quick-view-button"
+                            data-product="Urban Sneakers"
+                        >
+                            Quick View
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-content">
+
+                        <p class="product-category">
+                            Shoes
+                        </p>
+
+                        <h2>
+                            Urban Sneakers
+                        </h2>
+
+                        <p class="product-description">
+                            Comfortable casual sneakers
+                            built for everyday city wear.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="product-price">
+                                $64.99
+                            </span>
+
+                            <button
+                                type="button"
+                                class="cart-button"
+                            >
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <p
+                id="no-products"
+                class="no-products"
+                hidden
+            >
+                No products match the selected filters.
+            </p>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         QUICK VIEW MODAL
+    ====================================== -->
+
+    <div
+        id="quick-view-modal"
+        class="modal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-content">
+
+            <button
+                type="button"
+                id="close-modal"
+                class="modal-close"
+                aria-label="Close quick view"
+            >
+                &times;
+            </button>
+
+
+            <h2 id="modal-product-name">
+                Product
+            </h2>
+
+
+            <p>
+                This is a quick preview of the selected
+                product. A real application could display
+                product images, sizes, colors and detailed
+                information here.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer
+        id="footer"
+        class="site-footer"
+    >
+
+        <div class="footer-container">
+
+            <div>
+
+                <h2>
+                    ShopGrid
+                </h2>
+
+                <p>
+                    Modern products for everyday life.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Shop
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#">
+                            Clothing
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Shoes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Accessories
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Support
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Shipping
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Returns
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

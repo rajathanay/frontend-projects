@@ -1,0 +1,358 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* General Body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Header */
+.header {
+    background-color: #222222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Navbar */
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+/* Logo */
+.logo {
+    color: #ff7b00;
+    font-size: 28px;
+}
+
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    gap: 30px;
+}
+
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+
+    transition: color 0.3s;
+}
+
+
+.nav-links a:hover {
+    color: #ff7b00;
+}
+
+
+/* Hero Section */
+.hero {
+    min-height: 90vh;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("../images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+/* Hero Content */
+.hero-content {
+    color: white;
+    max-width: 750px;
+}
+
+
+.hero-content h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+
+/* Button */
+.btn {
+    display: inline-block;
+
+    background-color: #ff7b00;
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 28px;
+
+    border-radius: 5px;
+
+    font-size: 17px;
+
+    transition:
+        background-color 0.3s,
+        transform 0.3s;
+}
+
+
+.btn:hover {
+    background-color: #e66f00;
+    transform: translateY(-2px);
+}
+
+
+/* General Section Title */
+.section-title {
+    text-align: center;
+
+    font-size: 36px;
+
+    margin-bottom: 40px;
+}
+
+
+/* Menu Section */
+.menu {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 80px 20px;
+}
+
+
+/* Menu Container */
+.menu-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+
+/* Menu Card */
+.menu-card {
+    background-color: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+
+.menu-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 0, 0, 0.2);
+}
+
+
+/* Menu Images */
+.menu-card img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+}
+
+
+/* Menu Content */
+.menu-content {
+    padding: 20px;
+}
+
+
+.menu-content h3 {
+    font-size: 23px;
+
+    margin-bottom: 10px;
+}
+
+
+.menu-content p {
+    color: #666666;
+
+    margin-bottom: 15px;
+}
+
+
+.menu-content span {
+    color: #ff7b00;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* About */
+.about {
+    background-color: #f4f4f4;
+
+    padding: 80px 20px;
+}
+
+
+.about-container {
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.about-container p {
+    margin-bottom: 20px;
+
+    font-size: 18px;
+
+    color: #555555;
+}
+
+
+/* Contact */
+.contact {
+    padding: 80px 20px;
+
+    text-align: center;
+}
+
+
+.contact-container {
+    max-width: 600px;
+
+    margin: auto;
+}
+
+
+.contact-container p {
+    margin: 15px 0;
+
+    font-size: 18px;
+}
+
+
+/* Footer */
+.footer {
+    background-color: #222222;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px 20px;
+}
+
+
+/* Tablet Responsive */
+@media (max-width: 900px) {
+
+    .menu-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .hero-content h1 {
+        font-size: 45px;
+    }
+
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .hero {
+        min-height: 75vh;
+    }
+
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+
+    .hero-content p {
+        font-size: 17px;
+    }
+
+
+    .menu-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .section-title {
+        font-size: 30px;
+    }
+
+}
