@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Simple ticket booking system with live seat selection and booking validation."
+    >
+
+    <title>SeatBook</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+    <main class="booking-app">
+
+        <header class="app-header">
+            <p class="eyebrow">Ticket Booking</p>
+
+            <h1>SeatBook</h1>
+
+            <p>
+                Pick an event, choose your seats,
+                and confirm your booking.
+            </p>
+        </header>
+
+
+        <section class="card event-section">
+
+            <label for="event-select">
+                Choose Event
+            </label>
+
+            <select id="event-select">
+
+                <option
+                    value="movie"
+                    data-price="15"
+                >
+                    Movie Night - $15
+                </option>
+
+                <option
+                    value="concert"
+                    data-price="35"
+                >
+                    Live Concert - $35
+                </option>
+
+                <option
+                    value="sports"
+                    data-price="25"
+                >
+                    Sports Event - $25
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <section class="card">
+
+            <div class="section-top">
+
+                <div>
+                    <h2>Select Seats</h2>
+
+                    <p>
+                        Click an available seat to select it.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    id="refresh-seats"
+                    class="secondary-button"
+                >
+                    Refresh Availability
+                </button>
+
+            </div>
+
+
+            <div class="seat-legend">
+
+                <div>
+                    <span class="legend-seat"></span>
+                    Available
+                </div>
+
+                <div>
+                    <span class="legend-seat selected"></span>
+                    Selected
+                </div>
+
+                <div>
+                    <span class="legend-seat booked"></span>
+                    Unavailable
+                </div>
+
+            </div>
+
+
+            <div class="screen">
+                Stage / Screen
+            </div>
+
+
+            <div
+                id="seat-grid"
+                class="seat-grid"
+                aria-label="Seat selection"
+            >
+            </div>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>Booking Summary</h2>
+
+            <div class="summary-row">
+                <span>Selected Seats</span>
+                <strong id="selected-seats">None</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Tickets</span>
+                <strong id="ticket-count">0</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Price per Ticket</span>
+                <strong id="ticket-price">$15</strong>
+            </div>
+
+            <div class="summary-row total-row">
+                <span>Total</span>
+                <strong id="total-price">$0</strong>
+            </div>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>Customer Details</h2>
+
+            <form id="booking-form">
+
+                <div class="form-group">
+
+                    <label for="customer-name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customer-name"
+                        minlength="2"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customer-email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="customer-email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customer-phone">
+                        Phone
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customer-phone"
+                        pattern="[0-9]{10}"
+                        placeholder="10 digit phone number"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="book-button"
+                    class="book-button"
+                >
+                    Confirm Booking
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <p
+            id="status-message"
+            class="status-message"
+            aria-live="polite"
+        >
+        </p>
+
+    </main>
+
+
+   
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
