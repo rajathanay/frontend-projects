@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="A simulated real-time chat application with multiple rooms and online users."
+    >
+
+    <title>TalkSpace</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+    <main class="chat-app">
+
+        <aside class="sidebar">
+
+            <div class="brand">
+                <p>Realtime Chat</p>
+                <h1>TalkSpace</h1>
+            </div>
+
+
+            <section class="room-section">
+
+                <div class="sidebar-heading">
+                    <h2>Rooms</h2>
+                </div>
+
+                <form id="room-form">
+
+                    <label
+                        for="room-name"
+                        class="visually-hidden"
+                    >
+                        Room name
+                    </label>
+
+                    <div class="room-input">
+
+                        <input
+                            type="text"
+                            id="room-name"
+                            placeholder="New room"
+                            maxlength="25"
+                            autocomplete="off"
+                            required
+                        >
+
+                        <button type="submit">
+                            +
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+                <div
+                    id="room-list"
+                    class="room-list"
+                >
+                </div>
+
+            </section>
+
+
+            <section class="people-section">
+
+                <div class="sidebar-heading">
+                    <h2>People</h2>
+
+                    <span id="online-count">
+                        0 online
+                    </span>
+                </div>
+
+
+                <div
+                    id="user-list"
+                    class="user-list"
+                >
+                </div>
+
+            </section>
+
+
+            <button
+                type="button"
+                id="clear-chat-data"
+                class="clear-data-button"
+            >
+                Clear Chat Data
+            </button>
+
+        </aside>
+
+
+        <section class="chat-panel">
+
+            <header class="chat-header">
+
+                <div>
+
+                    <p class="chat-label">
+                        Current Room
+                    </p>
+
+                    <h2 id="current-room-name">
+                    </h2>
+
+                </div>
+
+
+                <div class="connection-status">
+
+                    <span class="connection-dot"></span>
+
+                    Connected
+
+                </div>
+
+            </header>
+
+
+            <div
+                id="message-list"
+                class="message-list"
+                aria-live="polite"
+            >
+            </div>
+
+
+            <div
+                id="empty-chat"
+                class="empty-chat"
+                hidden
+            >
+                <h3>No messages yet</h3>
+
+                <p>
+                    Start the conversation by sending
+                    the first message.
+                </p>
+            </div>
+
+
+            <div
+                id="typing-indicator"
+                class="typing-indicator"
+                aria-live="polite"
+            >
+            </div>
+
+
+            <form
+                id="message-form"
+                class="message-form"
+            >
+
+                <label
+                    for="message-input"
+                    class="visually-hidden"
+                >
+                    Message
+                </label>
+
+
+                <input
+                    type="text"
+                    id="message-input"
+                    placeholder="Write a message..."
+                    maxlength="300"
+                    autocomplete="off"
+                    required
+                >
+
+
+                <button type="submit">
+                    Send
+                </button>
+
+            </form>
+
+
+            <p
+                id="status-message"
+                class="status-message"
+                aria-live="polite"
+            >
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
