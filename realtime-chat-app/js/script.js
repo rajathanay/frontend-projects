@@ -45,17 +45,17 @@ const STORAGE_KEY =
 const mockUsers = [
     {
         id: createId(),
-        name: "Alex",
+        name: "Thanay",
         online: true
     },
     {
         id: createId(),
-        name: "Jordan",
+        name: "Manoj",
         online: true
     },
     {
         id: createId(),
-        name: "Taylor",
+        name: "Vinay",
         online: false
     }
 ];
