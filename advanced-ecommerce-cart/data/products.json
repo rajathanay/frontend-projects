@@ -1,0 +1,38 @@
+[
+    {
+        "id": "canvas-daypack",
+        "name": "Canvas Daypack",
+        "category": "Bags",
+        "price": 58.00
+    },
+    {
+        "id": "trail-runner",
+        "name": "Trail Runner",
+        "category": "Shoes",
+        "price": 82.00
+    },
+    {
+        "id": "everyday-hoodie",
+        "name": "Everyday Hoodie",
+        "category": "Clothing",
+        "price": 46.00
+    },
+    {
+        "id": "minimal-watch",
+        "name": "Minimal Watch",
+        "category": "Accessories",
+        "price": 125.00
+    },
+    {
+        "id": "cotton-tee",
+        "name": "Cotton Tee",
+        "category": "Clothing",
+        "price": 24.00
+    },
+    {
+        "id": "travel-bottle",
+        "name": "Travel Bottle",
+        "category": "Accessories",
+        "price": 19.00
+    }
+]
