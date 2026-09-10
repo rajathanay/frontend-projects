@@ -1,0 +1,39 @@
+<header class="app-header">
+
+    <div class="header-content">
+
+        <p class="header-label">
+            Employee Management
+        </p>
+
+        <h1>
+            TeamDesk
+        </h1>
+
+        <p class="header-text">
+            Manage employee records from one place.
+        </p>
+
+    </div>
+
+</header>
+
+
+<main class="app-container">
+
+    <app-employee-form
+        [employee]="selectedEmployee"
+        (saved)="employeeSaved()"
+        (cancelled)="cancelEdit()"
+    >
+    </app-employee-form>
+
+
+    <app-employee-list
+        [refreshVersion]="refreshVersion"
+        (editRequested)="startEdit($event)"
+        (employeeDeleted)="employeeDeleted($event)"
+    >
+    </app-employee-list>
+
+</main>

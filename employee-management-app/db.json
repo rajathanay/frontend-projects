@@ -1,0 +1,13 @@
+{
+  "employees": [
+    {
+      "firstName": "Thanay",
+      "lastName": "Raja",
+      "email": "thanay123@gmail.com",
+      "department": "Software",
+      "role": "Developer",
+      "id": "KPqbPXSUjTY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

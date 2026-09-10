@@ -1,0 +1,235 @@
+<section class="employee-section">
+
+    <div class="section-header">
+
+        <div>
+
+            <p class="section-label">
+                Team Directory
+            </p>
+
+            <h2>
+                Employees
+            </h2>
+
+        </div>
+
+
+        <span class="employee-count">
+
+            {{ filteredEmployees.length }}
+
+            @if (
+                filteredEmployees.length === 1
+            ) {
+                employee
+            } @else {
+                employees
+            }
+
+        </span>
+
+    </div>
+
+
+    <div class="search-area">
+
+        <label
+            for="employee-search"
+        >
+            Search Employees
+        </label>
+
+        <input
+            type="search"
+            id="employee-search"
+            placeholder="Search name, email, department or role"
+            (input)="onSearch($event)"
+        >
+
+    </div>
+
+
+    @if (successMessage) {
+
+        <p class="success-message">
+            {{ successMessage }}
+        </p>
+    }
+
+
+    @if (loading) {
+
+        <div class="message">
+            Loading employees...
+        </div>
+
+    } @else if (errorMessage) {
+
+        <div class="error-box">
+
+            <p>
+                {{ errorMessage }}
+            </p>
+
+            <button
+                type="button"
+                (click)="loadEmployees()"
+            >
+                Try Again
+            </button>
+
+        </div>
+
+    } @else if (
+        filteredEmployees.length === 0
+    ) {
+
+        <div class="empty-state">
+
+            @if (
+                employees.length === 0
+            ) {
+
+                <h3>
+                    No employees yet
+                </h3>
+
+                <p>
+                    Add your first employee
+                    using the form above.
+                </p>
+
+            } @else {
+
+                <h3>
+                    No matching employees
+                </h3>
+
+                <p>
+                    Try another search.
+                </p>
+            }
+
+        </div>
+
+    } @else {
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    @for (
+                        employee
+                        of paginatedEmployees;
+                        track employee.id
+                    ) {
+
+                        <tr>
+
+                            <td class="employee-name">
+
+                                {{ employee.firstName }}
+                                {{ employee.lastName }}
+
+                            </td>
+
+
+                            <td>
+                                {{ employee.email }}
+                            </td>
+
+
+                            <td>
+                                {{ employee.department }}
+                            </td>
+
+
+                            <td>
+                                {{ employee.role }}
+                            </td>
+
+
+                            <td>
+
+                                <div class="actions">
+
+                                    <button
+                                        type="button"
+                                        class="edit-button"
+                                        (click)="editEmployee(employee)"
+                                    >
+                                        Edit
+                                    </button>
+
+
+                                    <button
+                                        type="button"
+                                        class="delete-button"
+                                        (click)="deleteEmployee(employee)"
+                                    >
+                                        Delete
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="pagination">
+
+            <button
+                type="button"
+                (click)="previousPage()"
+                [disabled]="currentPage === 1"
+            >
+                Previous
+            </button>
+
+
+            <span>
+
+                Page
+                {{ currentPage }}
+                of
+                {{ totalPages }}
+
+            </span>
+
+
+            <button
+                type="button"
+                (click)="nextPage()"
+                [disabled]="currentPage === totalPages"
+            >
+                Next
+            </button>
+
+        </div>
+    }
+
+</section>
